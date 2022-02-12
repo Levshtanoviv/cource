@@ -37,7 +37,8 @@ public class LoginPage {
     }
 
     public String getErrorText(){//получение ошибки при невалидном логине или пароле
-        return  driver.findElement(heading).getText();
+        driver.findElement(signInButton).click();
+        return  driver.findElement(error).getText();
     }
 
     public SignUpPage createAccount(){

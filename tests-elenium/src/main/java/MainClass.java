@@ -27,7 +27,8 @@ public class MainClass {
 
         //PageFactory
         MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
-        mainPage.register("sdvsvsvv@fb.com");
+        mainPage.clickSignInButton();
+        //mainPage.register("sdvsvsvv@fb.com");
         //driver.quit();//закрытие браузера
     }
 }

@@ -12,8 +12,9 @@ public class MainPage {
 
     //пишем локаторы
     //используется PageFactory
-    @FindBy(xpath = "//a[@href='/login']")
-    private WebElement signInButton;
+//    @FindBy(xpath = "//a[@href='/login']..")
+//    private WebElement signInButton;   // почему то не работает
+    private By signInButton = By.xpath("//a[@href='/login']");
     @FindBy(xpath = "//a[@href='/login']/parent::div/following-sibling::a")
     private WebElement signUpButton;
     //private By userNameField = By.xpath("");
@@ -24,22 +25,23 @@ public class MainPage {
     private WebElement signUpFormButton;
 
     public LoginPage clickSignInButton(){
-        signInButton.click();
+        //signInButton.click();
+        driver.findElement(signInButton).click();
         return new LoginPage(driver);
     }
 
     public SignUpPage clickSignUpButton(){
-        signUpButton.click();
+        //signUpButton.click();
         return new SignUpPage(driver);
     }
 
     public SignUpPage clickSignUpFormButton(){
-        signUpFormButton.click();
+        //signUpFormButton.click();
         return new SignUpPage(driver);
     }
 
     public MainPage typeEmail(String email){//тоже самое для имени и пароля, если бы они были
-        emailField.sendKeys(email);
+        //emailField.sendKeys(email);
         return this;
     }
 
